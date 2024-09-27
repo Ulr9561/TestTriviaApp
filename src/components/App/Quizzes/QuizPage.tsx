@@ -1,6 +1,6 @@
 import { Transition } from "@headlessui/react";
 import { Fragment, useEffect, useState } from "react";
-import { Alert, AlertTitle } from "@mui/material";
+import { Alert, AlertColor, AlertTitle } from "@mui/material";
 import { Color, getRandomColors } from "../../../constants/getRandomColors";
 import { useLocation } from "react-router-dom";
 import { useAppSelector } from "../../../app/hooks";
@@ -15,7 +15,7 @@ function QuizPage() {
     const [isStarted, setIsStarted] = useState<boolean>(false);
     const [color, setColor] = useState<Color>({ bg: "", text: "" });
     const [alert, setAlert] = useState<{
-        type: "success" | "error" | null ;
+        type: AlertColor;
         message: string;
     } | null>(null);
 
